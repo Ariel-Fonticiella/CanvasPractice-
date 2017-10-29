@@ -45,7 +45,7 @@ function Circle(x, y, dx, dy, radius) {
     this.y = y;
     this.dx = dx;
     this.dy = dy;
-    this.radiuse = radius;
+    this.radius = radius;
 
   this.draw = function() {
       c.beginPath();
@@ -58,12 +58,12 @@ function Circle(x, y, dx, dy, radius) {
   this.update = function() {
       if(this.x + this.radius > innerWidth || this.x - this.radius < 0)
         {
-        this.dx = this.dx;
+        this.dx = -this.dx;
         }
 
       if(this.y + this.radius > innerHeight || this.y - this.radius < 0)
         {
-        this.dy = this.dy;
+        this.dy = -this.dy;
         }
 
         this.x += this.dx;
@@ -76,11 +76,11 @@ function Circle(x, y, dx, dy, radius) {
 var circleArray = [];
 
 for (var i = 0; i < 100; i++) {
-    var x = Math.random() * innerWidth;
-    var y = Math.random() * innerHeight;
+    var radius = 30;
+    var x = Math.random() * (innerWidth - radius * 2) + radius;
+    var y = Math.random() * (innerHeight - radius * 2) + radius;
     var dx = (Math.random() - 0.5) * 10;
     var dy = (Math.random() - 0.5) * 10;
-    var radius = 30;
     circleArray.push(new Circle (x, y, dx, dy, radius));
 }
 
