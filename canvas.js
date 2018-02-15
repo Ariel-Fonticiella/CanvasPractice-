@@ -102,6 +102,7 @@ function Circle(x, y, dx, dy, radius) {
 
         // Interactivity Occurs Here
 
+
       if(mouse.x - this.x < 50 && mouse.x - this.x > -50 &&
            mouse.y - this.y < 50 && mouse.y - this.y > -50) {
             if (this.radius < maxRadius) {
